@@ -1,4 +1,3 @@
-SEO
 favicon change
 meta data change
 url redirections

@@ -33,4 +33,9 @@ server.listen(port, () => {
 	logger.info(`Server running on port ${port}`);
 });
 
+app.get('/robots.txt', (req, res) => {
+	res.type('text/plain');
+    res.sendFile(__dirname + "/views/robots.txt");
+});
+
 app.use("/", homeRouter);

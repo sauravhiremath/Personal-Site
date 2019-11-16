@@ -35,10 +35,6 @@ router.post("/submit", async (req, res) => {
 	});
 });
 
-router.get("/robots.txt", async (req, res) => {
-	res.render('robots');
-});
-
 
 // logger.log("info", "Custom level");
 // logger.error("error");
