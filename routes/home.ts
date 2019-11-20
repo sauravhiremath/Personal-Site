@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { Response } from "../models/db";
+import { sendMail } from "../tools/sendMail";
 import { logger } from "../utility/loggers";
 
 const router = Router();
 
-function validateEmail(email) {
+const validateEmail = (email) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
@@ -28,6 +29,8 @@ router.post("/submit", async (req, res) => {
 	});
 
 	await response.save();
+
+	sendMail(name, email, subject, message);
 
 	return res.json({
 		success: true,

@@ -4,6 +4,7 @@
     "jsRules": {},
     "rules": {
       "no-console": false,
+      "bracketSpacing": true,
       "object-literal-sort-keys": false
     },
     "rulesDirectory": []
