@@ -114,4 +114,6 @@ build
 dist
 data/
 
+static/images-uncompressed
+
 deploy.sh
