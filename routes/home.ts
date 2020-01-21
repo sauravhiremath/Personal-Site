@@ -18,7 +18,7 @@ router.post("/submit", async (req, res) => {
 	const { name, email, subject, message } = req.body;
 
 	if (validateEmail(email) === false) {
-		return res.status(400).json({
+		return res.json({
 			success: false,
 			message: "invalidEmail",
 		});
